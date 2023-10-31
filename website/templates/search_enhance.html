@@ -1,0 +1,52 @@
+{% extends 'search_tutorial.html' %}
+{% block search_fast %}
+  <div class="row mt-2 mb-1">
+    <nav class="ml-0 navbar navbar-light nav-bar" style="background-color: none;">
+      <div class="">
+        <a class="custom-title search_none" href="/user/search-fast">Tìm kiếm nhanh</a>
+      </div>
+      <div class="">
+        <a class="custom-title search_none" href="/user/search-multi">Tìm kiếm cơ bản</a>
+      </div>
+      <div class="">
+        <a class="custom-title search_choose" href="/user/search-enhance">Tìm kiếm nâng cao</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="custom-card">
+    <form method="GET">
+      <div class="collapse show" id="collapseFast">
+        <div class="row custom-btn">
+          {% for i in range(1, 4) %}
+            <div class="form-group col-md-4">
+              <select class="form-control" id="formControlSelect{{ i }}" name="formControlSelect{{ i }}">
+                <option value="all">Tất cả</option>
+                <option value="TenSach">Nhan đề</option>
+                <option value="TacGia">Tác giả</option>
+                <option value="ChuDe">Chủ đề</option>
+                <option value="NamXB">Năm xuất bản</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <input type="text" id="keyword{{ i }}" name="keyword{{ i }}" class="form-control" placeholder="Nhập từ khóa tìm kiếm..." />
+            </div>
+
+            <div class="form-group col-md-2">
+              <select class="form-control" id="conditionSelect{{ i }}" name="conditionSelect{{ i }}">
+                <option value="must">AND</option>
+                <option value="should">OR</option>
+                <option value="must_not">NOT</option>
+              </select>
+            </div>
+          {% endfor %}
+
+          <div class="col-md-2">
+            <button type="submit" class="btn btn-submit btn-block btn-sub">Tìm kiếm</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  {{ es }}
+{% endblock %}

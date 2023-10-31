@@ -1,0 +1,41 @@
+{% extends 'home.html' %} {% block title %}
+  Admin's page
+{% endblock %}
+
+{% block menu %}
+  <nav class="navbar navbar-light nav-bar mb-2" style="background-color: #d09f08;">
+    <div class="row justify-content-start">
+      <!-- Thêm class "position-relative" vào phần tử cha -->
+      <a href="/admin" class="nav-link custom-menu">Trang chủ</a>
+      <div class="position-relative">
+        <!-- Thêm class "position-relative" vào phần tử cha -->
+        <a class="nav-link active dropdown-toggle bg-transparent border-0 custom-menu ml-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Thêm mới</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/admin/user/add">Đăng ký người dùng</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/admin/book/add">Thêm mới tài liệu</a>
+        </div>
+      </div>
+      <div class="position-relative">
+        <a class="nav-link active dropdown-toggle bg-transparent border-0 custom-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Các trang liên kết</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="https://cit.ctu.edu.vn/">Trường CNTT &amp; TT</a>
+          <a class="dropdown-item" href="https://lrcopac.ctu.edu.vn/pages/opac/wpid-search-stype-form-quick.html">Trung tâm học liệu</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-end mr-4">
+      <div class="position-relative">
+        <!-- Thêm class "position-relative" vào phần tử cha -->
+        <a class="nav-link active dropdown-toggle bg-transparent border-0 custom-menu ml-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tài khoản</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/admin">Chế độ quản lý</a>
+          <a class="dropdown-item" href="/user">Chế độ cơ bản</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/user/logout">Đăng xuất</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+{% endblock %}

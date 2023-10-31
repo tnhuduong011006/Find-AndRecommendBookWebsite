@@ -1,0 +1,16 @@
+{% extends 'admin_page.html' %} {% block title %}
+  Upload users file
+{% endblock %}
+{% block content %}
+  <div class="form-register">
+    <h3 class="title-form text-center mb-4">Đăng ký người dùng</h3>
+    <form method="POST" enctype="multipart/form-data">
+      <input class="text-center" style="color: blue;" type="file" name="file" />
+      <div class="mt-3">
+        <a href="{{ url_for('auth.download_file', filename = 'sample_user.xlsx') }}" class="btn btn-preview mr-5" download>Tải file mẫu</a>
+        <button type="submit" class="btn btn-preview mr-5" formaction="/admin/user/preview">Xem trước</button>
+        <button type="submit" class="btn btn-submit mr-3">Đăng ký</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'user_page.html' %} {% block title %}
+  Recommend
+{% endblock %}
+{% block content %}
+  <div class="mt-2 row justify-content-center">
+    <div class="col-md-10 justify-content-center">
+      {% for one in book %}
+        <div class="card mb-2 col-md-10">
+          <div class="card-body">
+            <div class="card-title" style="font-size: large;">
+              <b>{{ one['TenSach'] }}</b>
+            </div>
+            <!-- <ul class="list-group list-group-flush item"> -->
+            <div class="list-group list-group-flush item">
+              <div>
+                Tác giả: {{ one['TacGia'] }}<br />
+                Loại sách : {{ one['LoaiSach'] }}<br />
+                NXB: {{ one['NXB'] }}<br />
+                Số thứ tự kệ: {{ one['STTKe'] }}<br />
+                Chủ đề: {{ one['ChuDe'] }}<br />
+                Năm xuất bản: {{ one['NamXB'] }}
+              </div>
+
+              <div>
+                <a class="recommend-title" data-toggle="collapse" href="#recommend" role="button" aria-expanded="true" aria-controls="collapseExample" class="advanced">DANH SÁCH GỢI Ý <i class="fa fa-angle-down"></i></a>
+
+                <div class="collapse show" id="recommend">
+                  {% for result in rs %}
+                    <div>
+                      <a href="{{ url_for('auth.recommend', id = result['_id']) }}" class="custom-a form-control mb-1" style="height: fit-content;font-size: 0.9rem;"><b><span style="color: #000;">{{ loop.index }}.</span> {{ result['TenSach'] }}</b></a>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

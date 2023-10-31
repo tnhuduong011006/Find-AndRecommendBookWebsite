@@ -1,0 +1,43 @@
+{% extends 'admin_page.html' %} {% block title %}
+  Preview Books
+{% endblock %}
+{% block content %}
+  <div class="show-table">
+    <h4 class="preview-title text-center mb-4">Xem trước danh sách tài liệu</h4>
+    <div class="table-responsive-xl">
+      <table class="table table-striped" id="books-table">
+        <thead>
+          <tr>
+            <th style="width: 50px;">#</th>
+            <th>Tên Sách</th>
+            <th>Tác giả</th>
+            <th>Chủ đề</th>
+            <th>Loại sách</th>
+            <th>NXB</th>
+            <th>Năm XB</th>
+            <th>STT kệ</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for record in data %}
+            <tr>
+              <td>
+                <b>{{ loop.index }}</b>
+              </td>
+              <td>{{ record['TenSach'][0:48] }}...</td>
+              <td>{{ record['TacGia'][0:48] }}...</td>
+              <td>{{ record['ChuDe'] }}</td>
+              <td>{{ record['LoaiSach'][0:48] }}...</td>
+              <td>{{ record['NXB'][0:48] }}...</td>
+              <td>{{ record['NamXB'] }}</td>
+              <td>{{ record['STTKe'][0:48] }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="d-flex justify-content-end mt-3">
+      <a href="#" id="go-back" class="btn btn-preview">Quay lại</a>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'user_page.html' %}
+{% block content %}
+  <div class="show-table">
+    {% if message != '' %}
+      <h4 style="color: blue;" class="preview-title text-center mb-4">{{ message }}</h4>
+    {% else %}
+      <h4 style="color: blue;" class="preview-title text-center mb-4">Lịch sử tìm kiếm</h4>
+      <table class="table" id="history-table">
+        <thead>
+          <tr>
+            <th style="width: 50px;">#</th>
+            <th>Tên Sách</th>
+            <th>Thời gian truy cập</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for book in history %}
+            <tr>
+              <td>
+                <b>{{ loop.index }}</b>
+              </td>
+              <td>
+                <a class="custom-a mb-1" href="{{ url_for('auth.recommend', id = book['id']) }}">{{ book['name'] }}</a>
+              </td>
+              <td>{{ book['time'] }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+  </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'home.html' %}
+{% block title %}
+  Login
+{% endblock %}
+{% block content %}
+  <div class="form-register">
+    <form method="POST">
+      <h3 class="title-form text-center mb-4">Đăng nhập</h3>
+      <div class="form-group">
+        <input type="text" class="text-input" id="mssv" name="mssv" placeholder="Mã số đăng nhập" required />
+        <span class="icon-input"><i class="fa-solid fa-envelope" style="color: #1949d9;"></i></span>
+      </div>
+      <div class="form-group">
+        <input type="password" class="text-input" id="password" name="password" placeholder="Mật khẩu" required />
+        <span class="icon-input"><i class="fa-solid fa-key" style="color: #e1b500;"></i></span>
+      </div>
+
+      <br />
+      <button type="submit" class="btn btn-submit">Đăng nhập</button>
+    </form>
+  </div>
+{% endblock %}

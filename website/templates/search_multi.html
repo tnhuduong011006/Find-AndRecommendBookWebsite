@@ -1,0 +1,67 @@
+{% extends 'search_tutorial.html' %}
+{% block search_fast %}
+  <div class="row mt-2 mb-1">
+    <nav class="ml-0 navbar navbar-light nav-bar" style="background-color: none;">
+      <div class="">
+        <a class="custom-title search_none" href="/user/search-fast">Tìm kiếm nhanh</a>
+      </div>
+      <div class="">
+        <a class="custom-title search_choose" href="/user/search-multi">Tìm kiếm cơ bản</a>
+      </div>
+      <div class="">
+        <a class="custom-title search_none" href="/user/search-enhance">Tìm kiếm nâng cao</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="custom-card">
+    <form method="GET">
+      <div class="collapse show" id="collapseExample">
+        <div class="card card-body custom-btn">
+          <div class="row mb-2">
+            <div class="col-md-1">
+              <select class="" style="border: none;" id="chooseType" name="selectType">
+                <option value="">Loại tài liệu</option>
+                {% for type in types %}
+                  <option>{{ type }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+
+          <div class="row fields-multi">
+            <div class="col-md-4">
+              <input type="text" id="TenSach" name="TenSach" placeholder="Nhan đề" class="form-control" />
+            </div>
+
+            <div class="col-md-4">
+              <input type="text" id="ChuDe" name="ChuDe" class="form-control" placeholder="Chủ đề" />
+            </div>
+
+            <div class="col-md-4">
+              <input type="text" id="TacGia" name="TacGia" class="form-control" placeholder="Tác giả" />
+            </div>
+
+            <div class="col-md-4">
+              <input type="text" id="STTKe" name="STTKe" class="form-control" placeholder="STT Kệ" />
+            </div>
+
+            <div class="col-md-4">
+              <input type="text" id="NXB" name="NXB" class="form-control" placeholder="Nhà xuất bản" />
+            </div>
+
+            <div class="col-md-4">
+              <input type="text" id="NamXB" name="NamXB" class="form-control" placeholder="Năm xuất bản" />
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-md-3 mt-2">
+              <button type="submit" class="btn btn-submit btn-block">Tìm kiếm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock %}

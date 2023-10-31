@@ -1,0 +1,37 @@
+{% extends 'admin_page.html' %} {% block title %}
+  Preview Users
+{% endblock %}
+{% block content %}
+  <div class="show-table">
+    <h3 class="preview-title text-center mb-4">Xem trước danh sách người dùng</h3>
+    <table class="table table-striped" id="users-table">
+      <thead>
+        <tr>
+          <th style="width: 50px;">#</th>
+          <th>Họ Tên</th>
+          <th>MSSV</th>
+          <th>Email</th>
+          <th>Mật khẩu</th>
+          <th>Quyền</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for record in data %}
+          <tr>
+            <td>
+              <b>{{ loop.index }}</b>
+            </td>
+            <td>{{ record['ten'] }}</td>
+            <td>{{ record['mssv'] }}</td>
+            <td>{{ record['email'] }}</td>
+            <td>{{ record['matkhau'] }}</td>
+            <td>{{ record['quyen'] }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-end mt-3">
+      <a href="#" id="go-back" class="btn btn-preview">Quay lại</a>
+    </div>
+  </div>
+{% endblock %}

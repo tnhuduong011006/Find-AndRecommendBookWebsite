@@ -1,0 +1,60 @@
+{% extends 'user_page.html' %}
+{% block content %}
+  <div class="row mt-2">
+    <div class="col-md-3">
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-secondary">
+          <i class="fa-solid fa-circle-plus"></i> <b>Hướng dẫn tra cứu</b>
+        </li>
+        <li class="list-group-item">
+          <b>Tìm nhanh:</b> Tìm trong Tên tài liệu, Tác giả, Năm xuất bản, Từ khóa
+        </li>
+        <li class="list-group-item">
+          <b>Tìm đơn giản:</b> Tìm theo Loại tài liệu, Từ khóa, Tên tài liệu, Tác giả, Năm xuất bản
+        </li>
+        <li class="list-group-item">
+          <b>Tìm nâng cao:</b> Tìm theo theo toán tử AND, OR, NOT
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-8">
+      {% block search_fast %}
+
+      {% endblock %}
+      <!-- Search result -->
+      <div class="mt-3 row justify-content-center">
+        {% for result in results_elasticsearch %}
+          <div class="card m-2 col-md-11">
+            <div class="card-body">
+              <div class="card-title custom-namebook">
+                <b><span style="color: #000;">{{ loop.index }}.</span> {{ result['TenSach'] }}</b>
+              </div>
+              <!-- <ul class="list-group list-group-flush item"> -->
+              <div class="list-group list-group-flush item">
+                Tác giả: {{ result['TacGia'] }}<br />
+                Loại sách : {{ result['LoaiSach'] }}<br />
+                NXB: {{ result['NXB'] }}<br />
+
+                <div class="">
+                  <a data-toggle="collapse" href="#a{{ result['_id'] }}" role="button" aria-expanded="false" aria-controls="collapseExample" class="advanced">Xem thêm <i class="fa-solid fa-arrow-right"></i></a>
+
+                  <div class="collapse custom-add" id="a{{ result['_id'] }}">
+                    <div>
+                      Số thứ tự kệ: {{ result['STTKe'] }}<br />
+                      Chủ đề: {{ result['ChuDe'][0:100] }}...
+                    </div>
+                    <div class="row justify-content-start">
+                      <div class="col-md-2 mt-1">
+                        <a class="btn btn-secondary btn-block" href="{{ url_for('auth.recommend', id = result['_id']) }}">Gợi ý</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
