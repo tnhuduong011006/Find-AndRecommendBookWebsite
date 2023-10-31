@@ -1,0 +1,347 @@
+body {
+    background-color: rgb(204, 228, 244);
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    margin: auto;
+    width: 80%;
+
+}
+
+.header {
+    background-image: url('../img/baner2.png');
+    /* https://www.cit.ctu.edu.vn/encict/images/update2023/banner/banner_cict.jpg */
+    background-size: 100% 95%;
+    background-repeat: no-repeat;
+    height: 130px;
+}
+
+
+header a {
+    background-color: rgb(204, 228, 244);
+    font-family: Arial, Helvetica, sans-serif;
+    color: orange;
+    border-color: white;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 3rem;
+}
+
+.btn-sub {
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.custom-border {
+    border-bottom: #1949d9 solid 2px;
+}
+
+.custom-card {
+    /* border: 3px dotted #ffff62; */
+    border: none;
+    background: none;
+}
+
+.item {
+    font-size: 13px;
+    margin-left: 3px;
+}
+
+/* Loại bỏ padding và margin mặc định của danh sách ul và mục li */
+ul.list-group {
+    padding: 0;
+    margin: 0;
+}
+
+li.list-group-item {
+    /* Loại bỏ margin dưới cùng của mỗi mục để loại bỏ khoảng cách dư thừa */
+    margin-bottom: 0;
+
+    /* Loại bỏ phân cách ngang giữa các mục */
+    border: none;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+
+.imform {
+    list-style-type: none;
+}
+
+.custom-title {
+    width: fit-content;
+    font-size: 15px;
+    padding: 1rem 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.custom-title:hover {
+    text-decoration: none;
+    color: none;
+    background-color: #ccc;
+}
+
+.preview-title {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: blue;
+}
+
+.search_choose {
+    margin: auto;
+    background-color: #366dad;
+    color: #fff;
+}
+
+.search_none {
+    margin: auto;
+    color: #000;
+}
+
+.custom-btn {
+    width: 100%;
+    font-size: 15px;
+    padding: 1rem 1rem;
+    margin: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid #366dad;
+    background-color: #fff;
+}
+
+.recommend-title {
+    color: #1949d9;
+    text-decoration: none;
+}
+
+.recommend-title:hover {
+    text-decoration: none;
+}
+
+.nav-bar {
+    margin: auto;
+}
+
+/*---------------------------------------------------------------*/
+
+.register-page {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, rgb(204, 228, 244), rgb(212, 236, 244), #fff);
+    /* overflow: hidden; */
+    margin: auto;
+}
+
+.register-page .form-register {
+    margin: 20px auto;
+    padding: 0 0 20px 0;
+    color: #fff;
+    background: #fff;
+    width: 600px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: -5px -5px 10px rgba(0, 0, 0, .2), 5px 5px 10px rgba(0, 0, 0, .2);
+    z-index: 999;
+}
+
+.message {
+    width: 95%;
+    text-align: center;
+}
+
+.scrollable-container {
+    height: 200px;
+    /* Độ cao cố định */
+    overflow: scroll;
+    /* Tạo thanh cuộn */
+}
+
+/* table {
+    width: 100%;
+    border-collapse: collapse;
+} */
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100px;
+    /* Đặt chiều rộng tối đa cho mỗi cột */
+    /* overflow: hidden; */
+    text-overflow: ellipsis;
+    /* Đặt kiểu hiển thị văn bản khi vượt quá kích thước */
+    white-space: nowrap;
+    /* Ngăn ngắt dòng cho văn bản trong cột */
+}
+
+.register-page .frame {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background: rgba(239, 239, 239, .1); */
+    border-radius: 10px;
+    width: fit-content;
+    /* overflow: hidden; */
+    animation: fade-in-up 1s linear;
+    z-index: 999;
+}
+
+.register-page .show-table {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    width: 100%;
+    height: 67%;
+    border-radius: 10px;
+    padding: 30px 50px;
+    box-shadow: -5px -5px 10px rgba(0, 0, 0, .2), 5px 5px 10px rgba(0, 0, 0, .2);
+    animation: fade-in-up 1s linear;
+    z-index: 999;
+    overflow: auto;
+}
+
+.register-page .title-form {
+    font-family: 'UTM Mobifone KT', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 25px;
+    margin-bottom: 30px;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #1949d9;
+}
+
+.register-page .form-register form .form-group {
+    position: relative;
+    margin: 16px 0;
+    color: #fff;
+}
+
+.register-page .form-register form .radio-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-page .form-register form .radio-box .radio-group {
+    display: flex;
+    margin: 0 20px;
+}
+
+.register-page .form-register form .radio-box .radio-group label {
+    margin-bottom: unset;
+    margin-left: 10px;
+}
+
+.register-page .form-register form .form-group .title-input {
+    position: absolute;
+    top: 12px;
+    left: 45px;
+    z-index: 999;
+    color: #000;
+    transform: translateY(-50%);
+    transition: all 0.2s;
+}
+
+.register-page .form-register form .form-group .icon-input {
+    position: absolute;
+    top: 50%;
+    left: 12%;
+    transform: translateY(-50%);
+}
+
+.register-page .form-register form .form-group input {
+    margin: 5px 5px;
+    border-radius: unset;
+    padding: 8px 35px;
+    outline: unset;
+    width: 80%;
+    border-bottom: 1px solid #ccc;
+    border-left: unset;
+    border-right: unset;
+    border-top: unset;
+    background: none !important;
+}
+
+.btn-submit {
+    background-color: #256fdd;
+    color: #fff;
+}
+
+.btn-preview {
+    background-color: #5c5c5c;
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: #1949d9;
+    /* Màu nền khi hover */
+    color: #000;
+    /* Màu chữ khi hover */
+    border-color: #007bff;
+    /* Màu viền khi hover */
+}
+
+/* Link style */
+.custom-namebook {
+    color: #d09f08;
+    /* text-decoration: none; */
+}
+
+.custom-a {
+    color: #d09f08;
+    text-decoration: none;
+}
+
+.custom-a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.custom-menu {
+    color: #fff;
+
+}
+
+.custom-menu:hover {
+    color: #000;
+    /* Màu chữ thay đổi khi hover */
+    text-decoration: none;
+}
+
+.dropdown-transparent {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+/* Định dạng custom-select */
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    /* Điều chỉnh chiều rộng của selector tùy ý */
+}
+
+.card-footer {
+    font-size: small;
+}
+
+/* Đổi kích thước cho nút */
+.change-carousel-control {
+    /* background-color: #007bff; */
+    position: absolute;
+    top: 20%;
+    height: 300px;
+}
+
+.fields-multi div {
+    margin-bottom: 10px;
+}
